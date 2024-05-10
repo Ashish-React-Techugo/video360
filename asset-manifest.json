@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "/video360/static/css/main.b3c3250e.chunk.css",
-    "main.js": "/video360/static/js/main.a28da97a.chunk.js",
-    "main.js.map": "/video360/static/js/main.a28da97a.chunk.js.map",
+    "main.css": "/video360/static/css/main.a2493957.chunk.css",
+    "main.js": "/video360/static/js/main.c6f7fb96.chunk.js",
+    "main.js.map": "/video360/static/js/main.c6f7fb96.chunk.js.map",
     "runtime-main.js": "/video360/static/js/runtime-main.261fbf1d.js",
     "runtime-main.js.map": "/video360/static/js/runtime-main.261fbf1d.js.map",
     "static/css/2.9c917eb4.chunk.css": "/video360/static/css/2.9c917eb4.chunk.css",
-    "static/js/2.52190613.chunk.js": "/video360/static/js/2.52190613.chunk.js",
-    "static/js/2.52190613.chunk.js.map": "/video360/static/js/2.52190613.chunk.js.map",
+    "static/js/2.5ca20e37.chunk.js": "/video360/static/js/2.5ca20e37.chunk.js",
+    "static/js/2.5ca20e37.chunk.js.map": "/video360/static/js/2.5ca20e37.chunk.js.map",
     "index.html": "/video360/index.html",
     "static/css/2.9c917eb4.chunk.css.map": "/video360/static/css/2.9c917eb4.chunk.css.map",
-    "static/css/main.b3c3250e.chunk.css.map": "/video360/static/css/main.b3c3250e.chunk.css.map",
-    "static/js/2.52190613.chunk.js.LICENSE.txt": "/video360/static/js/2.52190613.chunk.js.LICENSE.txt"
+    "static/css/main.a2493957.chunk.css.map": "/video360/static/css/main.a2493957.chunk.css.map",
+    "static/js/2.5ca20e37.chunk.js.LICENSE.txt": "/video360/static/js/2.5ca20e37.chunk.js.LICENSE.txt",
+    "static/media/overlay.9dcdaa99.svg": "/video360/static/media/overlay.9dcdaa99.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.261fbf1d.js",
     "static/css/2.9c917eb4.chunk.css",
-    "static/js/2.52190613.chunk.js",
-    "static/css/main.b3c3250e.chunk.css",
-    "static/js/main.a28da97a.chunk.js"
+    "static/js/2.5ca20e37.chunk.js",
+    "static/css/main.a2493957.chunk.css",
+    "static/js/main.c6f7fb96.chunk.js"
   ]
 }
