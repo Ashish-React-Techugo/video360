@@ -14,6 +14,8 @@ import { Container, InputGroup, Table } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import overlay from './overlay.svg'
 import "./styles.css";
+var vr;
+var player
 export default function App() {
   const [team, setTeam] = useState();
   const [search, setSearch] = useState("");
@@ -25,11 +27,11 @@ export default function App() {
 
   useEffect(() => {
     function initVideo(window, videojs) {
-      var player = window.player = videojs('videojs-vr-player');
+      player = window.player = videojs('videojs-vr-player');
       player.mediainfo = player.mediainfo || {};
       player.mediainfo.projection = '180';
 
-      var vr = window.vr = player.vr({ projection: '180', debug: true, forceCardboard: false });
+      vr = window.vr = player.vr({ projection: '180', debug: true, forceCardboard: false });
     };
 
     if (window.videojs && vidtype==="vr") {
@@ -41,6 +43,8 @@ export default function App() {
   //   const player = videojs('my-video')
   //   console.log(player)
   // },[])
+
+  console.log(vr, player)
 
   function handleLive() {
     setVidtype("Live");
@@ -97,7 +101,7 @@ export default function App() {
           <Highlights />
         </>:
         <div className="video-container">
-          <video style={{margin: "auto", width:"100vw", height: "100vh"}} id="videojs-vr-player" class="video-js vjs-default-skin" controls playsinline>
+          <video style={{margin: "auto", width:"100vw", height: "100vh"}} id="videojs-vr-player" class="video-js vjs-default-skin" autoPlay controls playsinline>
             <source src="https://d8d913s460fub.cloudfront.net/krpanocloud/video/airpano/video-1920x960a-fs.mp4" type="video/mp4" />
           </video>
           {/* <div className="outer-div">
