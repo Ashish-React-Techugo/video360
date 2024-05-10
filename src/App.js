@@ -12,15 +12,35 @@ import { data } from "./data.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, InputGroup, Table } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
-
+import overlay from './overlay.svg'
 import "./styles.css";
-
 export default function App() {
   const [team, setTeam] = useState();
   const [search, setSearch] = useState("");
-
+  const sources = [
+    { url: '/public/360.mp4', type: 'video/mp4' }
+  ];
   const playerRef = useRef(null);
   const [vidtype, setVidtype] = useState("Vod");
+
+  useEffect(() => {
+    function initVideo(window, videojs) {
+      var player = window.player = videojs('videojs-vr-player');
+      player.mediainfo = player.mediainfo || {};
+      player.mediainfo.projection = '180';
+
+      var vr = window.vr = player.vr({ projection: '180', debug: true, forceCardboard: false });
+    };
+
+    if (window.videojs && vidtype==="vr") {
+      initVideo(window, window.videojs)
+    }
+  }, [vidtype])
+
+  // useEffect(()=>{
+  //   const player = videojs('my-video')
+  //   console.log(player)
+  // },[])
 
   function handleLive() {
     setVidtype("Live");
@@ -55,9 +75,9 @@ export default function App() {
   };
   const handlePlayerReady = (player) => {
     playerRef.current = player;
-    player.on("waiting", () => {});
+    player.on("waiting", () => { });
 
-    player.on("dispose", () => {});
+    player.on("dispose", () => { });
   };
 
   var imaOptions = {
@@ -68,11 +88,28 @@ export default function App() {
 
   return (
     <>
-      {vidtype === "Vod" && (
+      <div>
+        <button onClick={()=>setVidtype("Vod")}>360deg</button>
+        <button  onClick={()=>setVidtype("vr")}>VR</button>
+      </div>
+      {vidtype === "Vod" ? 
         <>
           <Highlights />
-        </>
-      )}
+        </>:
+        <div className="video-container">
+          <video style={{margin: "auto", width:"100vw", height: "100vh"}} id="videojs-vr-player" class="video-js vjs-default-skin" controls playsinline>
+            <source src="https://d8d913s460fub.cloudfront.net/krpanocloud/video/airpano/video-1920x960a-fs.mp4" type="video/mp4" />
+          </video>
+          {/* <div className="outer-div">
+            <div className="inner-div">
+            </div>
+            <div className="inner-div">
+            </div>
+          </div> */}
+          <img className="overlay-image" alt="overlay" src={overlay} />
+          {/* <VrPlayer sources={ sources } brand="React VR Player" title="Example Video" /> */}
+        </div>
+      }
     </>
   );
 }

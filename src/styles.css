@@ -25,3 +25,49 @@ h1 {
   width: 200px;
   box-shadow: 8px 8px 0px 0px #ff34d4;
 }
+
+.video-container{
+  width: 100vw;
+  position: relative;
+  height: 100vh;
+}
+
+.outer-div {
+  background-color: rgba(0, 0, 0, 0.396); /* Red background with 50% opacity */
+  /* width: 100%; */
+  height: 100%;
+  width: 100%;
+  /* padding: 20px; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: 49% 49%;
+  gap: 10px;
+  z-index: 100;
+
+}
+.overlay-image{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  object-fit: contain;
+}
+
+.inner-div {
+  /* position: absolute; */
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  border: 2px solid black;
+  clip: circle(60px 725px 460px 1125px);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); /* Clip to the shape of the parent div */
+  background-color: transparent; /* Blue background with 50% opacity */
+  mix-blend-mode: multiply; /* Allows seeing through both parent and child */
+}

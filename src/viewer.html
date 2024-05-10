@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>videojs-vr Demo</title>
+   <link href="../node_modules/video.js/dist/video-js.css" rel="stylesheet">
+</head>
+<body>
+  <video width="640" height="300" id="videojs-vr-player" class="video-js vjs-default-skin" controls playsinline>
+    <source src="../public/360.mp4" type="video/mp4">
+  </video>
+  <script src="../node_modules/video.js/dist/video.js"></script>
+  <script src="../node_modules/videojs-vr"></script>
+  <script>
+    (function(window, videojs) {
+      var player = window.player = videojs('videojs-vr-player');
+      player.mediainfo = player.mediainfo || {};
+      player.mediainfo.projection = '180';
+
+      var vr = window.vr = player.vr({projection: '180', debug: true, forceCardboard: false});
+    }(window, window.videojs));
+  </script>
+</body>
+</html>

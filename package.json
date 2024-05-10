@@ -16,10 +16,11 @@
     "react-multi-carousel": "2.8.2",
     "react-native-animated-overlay": "0.0.10",
     "react-scripts": "4.0.0",
+    "react-vr-player": "^0.1.0",
     "video.js": "7.20.3",
     "videojs-contrib-ads": "6.9.0",
     "videojs-ima": "2.1.0",
-    "videojs-vr": "1.10.1"
+    "videojs-vr": "^1.10.1"
   },
   "devDependencies": {
     "@babel/runtime": "7.13.8",
